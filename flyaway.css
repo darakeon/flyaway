@@ -46,6 +46,12 @@
 	100%	{opacity: 0;}
 }
 
+@keyframes star {
+	0%		{opacity: 0.6;}
+	50%		{opacity: 1.0;}
+	100%	{opacity: 0.6;}
+}
+
 body {
 	margin: 0;
 	animation: sky var(--time) infinite linear;
@@ -92,6 +98,7 @@ body {
 	height: 3px;
 	display: inline-block;
 	position: absolute;
+	animation: star 1s infinite ease-in-out;
 }
 
 #bottom {
