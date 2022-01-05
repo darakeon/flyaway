@@ -1,0 +1,111 @@
+:root {
+	--time: 60s;
+}
+
+@keyframes sky {
+	0%		{background-color: #089;}
+	25%		{background-color: #0FF;}
+	75%		{background-color: #013;}
+	100%	{background-color: #089;}
+}
+
+@keyframes sea {
+	0%		{background-color: #069;}
+	25%		{background-color: #09C;}
+	75%		{background-color: #036;}
+	100%	{background-color: #069;}
+}
+
+@keyframes boat {
+	0%		{filter: brightness(1.2);	left:  100% ;}
+	25%		{filter: brightness(2.0);	left:   75% ;}
+	75%		{filter: brightness(0.4);	left:   25% ;}
+	100%	{filter: brightness(1.2);	left: -100px;}
+}
+
+@keyframes sun {
+	0%		{left: -50px; top: 50% ;}
+	20%		{left:  40% ; top: 25% ;}
+	30%		{left:  60% ; top: 25% ;}
+	50%		{left: 100% ; top: 50% ;}
+	100%	{left: 100% ; top:  0px;}
+}
+
+@keyframes moon {
+	0%		{left: -50px; top:  0px;}
+	50%		{left: -50px; top: 50% ;}
+	70%		{left:  40% ; top: 25% ;}
+	80%		{left:  60% ; top: 25% ;}
+	100%	{left: 100% ; top: 50% ;}
+}
+
+@keyframes stars {
+	0%		{opacity: 0;}
+	50%		{opacity: 0;}
+	75%		{opacity: 1;}
+	100%	{opacity: 0;}
+}
+
+body {
+	margin: 0;
+	animation: sky var(--time) infinite linear;
+}
+
+#stars {
+	height: 100%;
+	width: 100%;
+	display: block;
+	position: absolute;
+	z-index: 1;
+}
+
+#sky {
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	animation: stars var(--time) infinite linear;
+}
+
+#sun, #moon {
+	width: 50px;
+	height: 50px;
+	border-radius: 200px;
+	position: fixed;
+}
+
+#sun {
+	background: #FF0;
+	animation: sun var(--time) infinite linear;
+}
+
+#moon {
+	background: #FFF;
+	animation: moon var(--time) infinite linear;
+}
+
+.star {
+	background: #FFF;
+	border-radius: 3px;
+	width: 3px;
+	height: 3px;
+	display: inline-block;
+	position: absolute;
+}
+
+#bottom {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+#sea {
+	width: 100%;
+	height: 100px;
+	margin-top: -30px;
+	animation: sea var(--time) infinite;
+}
+
+#boat {
+	position: relative;
+	animation: boat var(--time) infinite linear;
+}
