@@ -19,6 +19,28 @@ function getTime() {
 	return { hour, minute, second, total }
 }
 
+function setClock() {
+	const time = getTime()
+
+	const hourDigits = document
+		.getElementById('hour')
+		.getElementsByClassName('digit')
+
+	const hourUnit = time.hour % 10
+	const hourDec = (time.hour - hourUnit) / 10
+	hourDigits[0].classList.add(`number-${hourDec}`)
+	hourDigits[1].classList.add(`number-${hourUnit}`)
+
+	const minuteDigits = document
+		.getElementById('minute')
+		.getElementsByClassName('digit')
+
+	const minuteUnit = time.minute % 10
+	const minuteDec = (time.minute - minuteUnit) / 10
+	minuteDigits[0].classList.add(`number-${minuteDec}`)
+	minuteDigits[1].classList.add(`number-${minuteUnit}`)
+}
+
 function setDelay() {
 	const animated = [
 		document.getElementsByTagName('body')[0],
@@ -43,4 +65,7 @@ function setDelay() {
 		element.style.animationDelay += `-${delay}s`
 	})
 }
+
+setClock()
+setInterval(setClock, 1000 * 30)
 setDelay()

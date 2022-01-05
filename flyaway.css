@@ -121,3 +121,134 @@ body {
 	position: relative;
 	animation: boat var(--time) infinite linear;
 }
+
+#clock {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 3vmin;
+	background-color: #000;
+	border-radius: 0 0 0 3vmin;
+}
+
+	#clock * {
+		line-height: 0;
+	}
+
+	#hour, #dots, #minute {
+		display: inline-block;
+	}
+
+		#clock span {
+			border-radius: 0.25vmin;
+		}
+
+		.dot {
+			width: 0.5vmin;
+			height: 0.5vmin;
+			margin: 1vmin 0.5vmin;
+			display: block;
+			background-color: #C00;
+		}
+
+		.digit {
+			display: inline-block;
+			text-align: center;
+			margin: 0.25vmin;
+		}
+
+			.dash-h {
+				width: 2vmin;
+				height: 0.5vmin;
+				margin: 0 0.5vmin;
+				display: block;
+			}
+
+			.dash-2, .dash-5 {
+				margin-left: 2vmin;
+			}
+
+			.dash-v {
+				width: 0.5vmin;
+				height: 2vmin;
+				display: inline-block;
+			}
+
+			.number-0 .dash-0,
+			.number-0 .dash-1,
+			.number-0 .dash-2,
+			.number-0 .dash-4,
+			.number-0 .dash-5,
+			.number-0 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-1 .dash-2,
+			.number-1 .dash-5 {
+				background-color: #C00;
+			}
+
+			.number-2 .dash-0,
+			.number-2 .dash-2,
+			.number-2 .dash-3,
+			.number-2 .dash-4,
+			.number-2 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-3 .dash-0,
+			.number-3 .dash-2,
+			.number-3 .dash-3,
+			.number-3 .dash-5,
+			.number-3 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-4 .dash-1,
+			.number-4 .dash-2,
+			.number-4 .dash-3,
+			.number-4 .dash-5 {
+				background-color: #C00;
+			}
+
+			.number-5 .dash-0,
+			.number-5 .dash-1,
+			.number-5 .dash-3,
+			.number-5 .dash-5,
+			.number-5 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-6 .dash-0,
+			.number-6 .dash-1,
+			.number-6 .dash-3,
+			.number-6 .dash-4,
+			.number-6 .dash-5,
+			.number-6 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-7 .dash-0,
+			.number-7 .dash-2,
+			.number-7 .dash-5 {
+				background-color: #C00;
+			}
+
+			.number-8 .dash-0,
+			.number-8 .dash-1,
+			.number-8 .dash-2,
+			.number-8 .dash-3,
+			.number-8 .dash-4,
+			.number-8 .dash-5,
+			.number-8 .dash-6 {
+				background-color: #C00;
+			}
+
+			.number-9 .dash-0,
+			.number-9 .dash-1,
+			.number-9 .dash-2,
+			.number-9 .dash-3,
+			.number-9 .dash-5,
+			.number-9 .dash-6 {
+				background-color: #C00;
+			}
