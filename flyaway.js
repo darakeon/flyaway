@@ -85,17 +85,17 @@ function setDelay() {
 		document.getElementById('sea'),
 		document.getElementById('boat'),
 	]
-	
+
 	const time = getTime()
 
 	const sixHourStart = 6 * 60 * 60
-	const delay = time.total - sixHourStart
-	
+	let delay = time.total - sixHourStart
+
 	const oneDay = 24 * 60 * 60
 	if (delay < 0) {
 		delay += oneDay
 	}
-	
+
 	animated.forEach(element => {
 		element.style.animationDelay += `-${delay}s`
 	})
