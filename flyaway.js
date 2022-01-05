@@ -59,7 +59,9 @@ function setClock() {
 
 	const hourUnit = time.hour % 10
 	const hourDec = (time.hour - hourUnit) / 10
+	hourDigits[0].classList.remove(`number-${(hourDec+9)%10}`)
 	hourDigits[0].classList.add(`number-${hourDec}`)
+	hourDigits[1].classList.remove(`number-${(hourUnit+9)%10}`)
 	hourDigits[1].classList.add(`number-${hourUnit}`)
 
 	const minuteDigits = document
@@ -68,7 +70,9 @@ function setClock() {
 
 	const minuteUnit = time.minute % 10
 	const minuteDec = (time.minute - minuteUnit) / 10
+	minuteDigits[0].classList.remove(`number-${(minuteDec+9)%10}`)
 	minuteDigits[0].classList.add(`number-${minuteDec}`)
+	minuteDigits[1].classList.remove(`number-${(minuteUnit+9)%10}`)
 	minuteDigits[1].classList.add(`number-${minuteUnit}`)
 }
 
