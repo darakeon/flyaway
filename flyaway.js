@@ -1,7 +1,38 @@
 function addStar(event) {
-	document.getElementById('sky').innerHTML = 
-		'<span class="star" style="top: ' + (event.y-2) + 'px; left: ' + (event.x-2) + 'px"></span>'
-		+ document.getElementById('sky').innerHTML
+	addStarStorage(event.x, event.y)
+	addStarSky(event.x, event.y)
+}
+
+function addStarStorage(x, y) {
+	let stars = localStorage.getItem('stars')
+
+	if (!stars)
+		stars = []
+	else
+		stars = JSON.parse(stars)
+
+	stars.push({x, y})
+
+	localStorage.setItem('stars', JSON.stringify(stars))
+}
+
+function addStarSky(x, y) {
+	const sky = document.getElementById('sky')
+	sky.innerHTML += `
+		<span class="star"
+			style="top: ${y-2}px; left: ${x-2}px">
+		</span>
+	`
+}
+
+function recoverStars() {
+	let stars = localStorage.getItem('stars')
+	if (!stars) return
+	stars = JSON.parse(stars)
+
+	stars.forEach(star => {
+		addStarSky(star.x, star.y)
+	});
 }
 
 function getTime() {
@@ -69,3 +100,4 @@ function setDelay() {
 setClock()
 setInterval(setClock, 1000 * 30)
 setDelay()
+recoverStars()
