@@ -64,6 +64,8 @@ body {
 	width: 100%;
 	display: inline-block;
 	animation: stars var(--time) infinite linear;
+	position: absolute;
+	top: 0;
 }
 
 #sun, #moon {
