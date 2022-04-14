@@ -57,6 +57,7 @@
 body {
 	margin: 0;
 	animation: sky var(--time) infinite linear;
+	overflow: hidden;
 }
 
 #stars {
